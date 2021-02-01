@@ -1,0 +1,1 @@
+worker: python PitsaBotMain_1.py
