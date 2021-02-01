@@ -11,7 +11,7 @@ Token      = '1469207995:AAFmAHVqs6yKQGdw7mpRh7MAflTmTH5s-1E'
 Chat = '-1001480540421'
 bot = telebot.TeleBot(Token)
 start_mess = 'Pizza!\nWithout further interruption you can add me to your chat, let\'s celebrate and eat some pitsa!'
-help_mess  = 'I can:\n//TODO: opportunites'
+help_mess  = 'I can fuck your mom.\ntype "/pizza" fucking retard'
 all_ping   = '@prostokvashka\nRazvodila\n@YegorSher\n@LizaZhdamirova\nBite Za Dusto\nSnezhanna\n@brutus1002\n@ktowh0\n@AcoDe113\nGrifn\n@Genabanila\n@AntiSep_tiK\nВладislove\nИсмаил\n@TimRudz\n@zizkooo\n@OIOIO101'
 
 @bot.message_handler(commands=['pizza'])
