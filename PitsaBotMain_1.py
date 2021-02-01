@@ -8,7 +8,7 @@ import PIL.ImageFont as ImageFont
 from random import randint, choice
 
 Token      = '1469207995:AAFmAHVqs6yKQGdw7mpRh7MAflTmTH5s-1E'
-Chat = '-1001480540421'
+Chat = '-1001464804779'
 bot = telebot.TeleBot(Token)
 start_mess = 'Pizza!\nWithout further interruption you can add me to your chat, let\'s celebrate and eat some pitsa!'
 help_mess  = 'I can fuck your mom.\ntype "/pizza" fucking retard'
