@@ -94,7 +94,7 @@ def check_captcha(message):
         bot.reply_to(message, 'Верно!')
         # bot.send_message(Chat, 'Верно!')
         # time.sleep(5)
-    if message.text != Key and message.text == "нет":
+    elif message.text != Key and message.text == "нет":
         # time.sleep(10)
         bot.reply_to(message, 'пидора ответ, неверно даун ебаный иди уроки учи')
         bot.register_next_step_handler(message, captcha_spam)
