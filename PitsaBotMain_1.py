@@ -8,7 +8,7 @@ import PIL.ImageFont as ImageFont
 from random import randint, choice
 
 Token      = '1469207995:AAFmAHVqs6yKQGdw7mpRh7MAflTmTH5s-1E'
-Chat = '-1001464804779'
+Chat = '-1001480540421'
 bot = telebot.TeleBot(Token)
 start_mess = 'Pizza!\nWithout further interruption you can add me to your chat, let\'s celebrate and eat some pitsa!'
 help_mess  = 'I can fuck your mom.\ntype "/pizza" fucking retard'
@@ -83,7 +83,7 @@ dict = {'ясно': 'хуясно', 'шо': 'каво', 'каво': 'шо', 'я 
 
 @bot.message_handler(content_types=['text'])
 def phrase_answer(message):
-    if message.text.lower() in dict:
+    if (message.text.lower().startswith(dict) | message.text.lower().endswith(dict)) & message.text.lower() in dict:
         bot.send_message(Chat, dict[message.text.lower()])
 
 
@@ -94,7 +94,7 @@ def check_captcha(message):
         bot.reply_to(message, 'Верно!')
         # bot.send_message(Chat, 'Верно!')
         # time.sleep(5)
-    elif message.text != Key and message.text == "нет":
+    elif message.text != Key & message.text == "нет":
         # time.sleep(10)
         bot.reply_to(message, 'пидора ответ, неверно даун ебаный иди уроки учи')
         bot.register_next_step_handler(message, captcha_spam)
