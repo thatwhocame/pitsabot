@@ -83,7 +83,7 @@ dict = {'ясно': 'хуясно', 'шо': 'каво', 'каво': 'шо', 'я 
 
 @bot.message_handler(content_types=['text'])
 def phrase_answer(message):
-    if (message.text.lower().startswith(dict) | message.text.lower().endswith(dict)) & message.text.lower() in dict:
+    if (message.text.lower().startswith(dict[message.text]) | message.text.lower().endswith(dict[message.text])) & message.text.lower() in dict:
         bot.send_message(Chat, dict[message.text.lower()])
 
 
