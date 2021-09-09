@@ -67,10 +67,10 @@ def Vois(message):
                  '\"' + ''.join([choice('абвг деёжзийклмно прстуфхцчш щъыьэ юя') for i in range(randint(5, 40))]) + '\" © ' + NameArr[randint(0, len(NameArr)-1)])
 
 
-@bot.message_handler(commands=['captcha'])
-def captcha_spam(message):
-    bot.send_photo(Chat, Kartinka)
-    bot.register_next_step_handler(message, check_captcha)
+#@bot.message_handler(commands=['captcha'])
+#def captcha_spam(message):
+    #bot.send_photo(Chat, Kartinka)
+    #bot.register_next_step_handler(message, check_captcha)
 
 
 dict = {'ясно': 'хуясно', 'шо': 'каво', 'каво': 'шо', 'я хочу питси': 'а хуитси не хочешь дурак?',
@@ -83,25 +83,25 @@ dict = {'ясно': 'хуясно', 'шо': 'каво', 'каво': 'шо', 'я 
 
 @bot.message_handler(content_types=['text'])
 def phrase_answer(message):
-    if (message.text.lower().startswith(dict[message.text]) | message.text.lower().endswith(dict[message.text])) & message.text.lower() in dict:
+    if (message.text.lower().startswith(dict[message.text.lower()]) | message.text.lower().endswith(dict[message.text.lower()])) & message.text.lower() in dict:
         bot.send_message(Chat, dict[message.text.lower()])
 
-
-@bot.message_handler(content_types=['text'])
-def check_captcha(message):
+        
+#@bot.message_handler(content_types=['text'])
+#def check_captcha(message):
     # time.sleep(5)
-    if message.text == Key:
-        bot.reply_to(message, 'Верно!')
+    #if message.text == Key:
+        #bot.reply_to(message, 'Верно!')
         # bot.send_message(Chat, 'Верно!')
         # time.sleep(5)
-    elif message.text != Key & message.text == "нет":
+    #elif message.text != Key & message.text == "нет":
         # time.sleep(10)
-        bot.reply_to(message, 'пидора ответ, неверно даун ебаный иди уроки учи')
-        bot.register_next_step_handler(message, captcha_spam)
-    else:
-        bot.reply_to(message, 'Неверно!')
+    #    bot.reply_to(message, 'пидора ответ, неверно даун ебаный иди уроки учи')
+    #    bot.register_next_step_handler(message, captcha_spam)
+    #else:
+    #    bot.reply_to(message, 'Неверно!')
         # time.sleep(60)
-        bot.register_next_step_handler(message, captcha_spam)
+    #    bot.register_next_step_handler(message, captcha_spam)
 
 
 def main(use_logging, level_name):
